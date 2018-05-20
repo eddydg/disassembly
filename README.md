@@ -35,7 +35,7 @@ cd emsdk
 emsdk install --build=Release sdk-incoming-64bit binaryen-master-64bit
 emsdk activate --global --build=Release sdk-incoming-64bit binaryen-master-64bit
 
-emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"] 'fibo.c'
+emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' 'fibo.c'
 ```
 
 You will obtain the binary `a.out.asm` and the JS wrapper `a.out.js`.
