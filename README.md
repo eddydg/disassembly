@@ -27,18 +27,15 @@ https://developer.mozilla.org/fr/docs/WebAssembly/C_to_wasm
 git clone https://github.com/juj/emsdk.git
 cd emsdk
 
-# Linux or Mac OS X
 ./emsdk install --build=Release sdk-incoming-64bit binaryen-master-64bit
 ./emsdk activate --global --build=Release sdk-incoming-64bit binaryen-master-64bit
-
-# Windows
-emsdk install --build=Release sdk-incoming-64bit binaryen-master-64bit
-emsdk activate --global --build=Release sdk-incoming-64bit binaryen-master-64bit
 
 emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' 'fibo.c'
 ```
 
 You will obtain the binary `a.out.asm` and the JS wrapper `a.out.js`.
+
+*On Windows*: remove the `./` in the commands.
 
 # Call it in your browser
 
