@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Disassembly</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js" integrity="sha256-VKITM616rVzV+MI3kZMNUDoY5uTsuSl1ZvEeZhNoJVk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.5/platform.min.js" integrity="sha256-a5JlAx3qX6Rkvx+38zcjAPQLDQVUIwwwUeOrlDQ5W8s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/benchmark/2.1.4/benchmark.min.js" integrity="sha256-E9WntYtyTKI7F7Y5e+lffQzwv3s0nVYQRnbP3OTYxDo=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      var suite = new Benchmark.Suite;
+
+      // add tests
+      suite.add('RegExp#test', function() {
+        /o/.test('Hello World!');
+      })
+      .add('String#indexOf', function() {
+        'Hello World!'.indexOf('o') > -1;
+      })
+      .add('String#match', function() {
+        !!'Hello World!'.match(/o/);
+      })
+      // add listeners
+      .on('cycle', function(event) {
+        console.log(String(event.target));
+      })
+      .on('complete', function() {
+        console.log('Fastest is ' + this.filter('fastest').map('name'));
+      })
+      // run async
+      .run({ 'async': true });
+    </script>
+  </body>
+</html>
