@@ -37,6 +37,8 @@ You will obtain the binary `a.out.asm` and the JS wrapper `a.out.js`.
 
 *On Windows*: remove the `./` in the commands.
 
+Note: On Window I had several issues installing all the necessary. I ended up using the Window 10 "Ubuntu Bash" terminal end it worked flawlessly.
+
 # Call it in your browser
 
 index.html
