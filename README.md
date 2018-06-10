@@ -53,6 +53,16 @@ index.html
 ```
 
 If you try it, you will have a CORS error, so you need to access it from a server.
+
+## (Emrun)[http://kripken.github.io/emscripten-site/docs/compiling/Running-html-files-with-emrun.html]
+`emrun index.html`
+
+If your browser is not recognized, you can check what is available with `emrun --list_browsers`.
+You can also directly provide the browsers path: `emrun --browser=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe index.html`.
+
+Alternatively, the `--no_browser` flag is also available.
+
+## Custom server
 ```
 npm install http-server -g
 http-server
